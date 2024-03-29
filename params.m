@@ -26,7 +26,7 @@ Tm_list     = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 1
 gear_ratios = [3.5, 2.8, 2.0, 1.5, 1.0];
 
 
-% Sample efficiency map (replace this with your actual efficiency map data)
+% EFFICIENCY MAP
 efficiency_map = 0.01*[...
               50 50 50 50 50 50 50 50 50 50 50 50 50 50 50 50 50   
               68 70 71 71 71 71 70 70 69 69 69 68 67 67 67 67 67  

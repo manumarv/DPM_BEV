@@ -1,4 +1,5 @@
-% Calculate Motor Torque
+% Calculate Motor Torque based on the speed vector
+
 motorTorque = zeros(size(speed_vector)); % Initialize torque vector
 
 for i = 1:length(speed_vector)
@@ -14,6 +15,3 @@ for i = 1:length(speed_vector)
     end
 end
 
-% Output the motor torque
-% disp('Motor Torque (Nm):');
-% disp(motorTorque);
