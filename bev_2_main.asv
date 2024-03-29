@@ -1,0 +1,59 @@
+% create grid
+load JN1015
+
+% create grid
+clear grd
+
+grd.Nx{1}    = 201; 
+
+
+grd.X0{1} = 0;
+grd.Xn{1}.lo = 0;
+grd.Xn{1}.hi = 100000;
+grd.XN{1}.lo = 0;
+grd.XN{1}.hi = 100000;
+
+
+grd.X0{2} = 0;
+grd.Xn{2}.lo = 0;
+grd.Xn{2}.hi = 25;
+grd.XN{2}.lo = 2;
+grd.XN{2}.hi = 20;
+
+grd.X0{3} = 0;
+grd.Xn{3}.lo = 0;
+grd.Xn{3}.hi = 661;
+grd.XN{3}.lo = 0;
+grd.XN{3}.hi = 661;
+
+
+
+grd.Un{1}.hi = 1;
+grd.Un{1}.lo = 0;
+grd.Nu{1} = 21;
+
+grd.Un{2}.hi = 1;
+grd.Un{2}.lo = 0;
+grd.Nu{2} = 21;
+
+grd.Un{3}.hi = 1;
+grd.Un{3}.lo = 0;
+grd.Nu{3} = 21;
+
+% define problem
+clear prb
+prb.W{1} = speed_vector; % (661 elements)
+prb.W{2} = acceleration_vector; % (661 elements)
+prb.W{3} = gearnumber_vector; % (661 elements)
+prb.Ts = 1;
+prb.N  = 660*1/prb.Ts + 1;
+
+% set options
+options = dpm();
+options.BoundaryMethod = 'LevelSet'; % also possible: 'none' or 'LevelSet';
+if strcmp(options.BoundaryMethod,'Lne')
+    options.FixedGrid = 1;
+    options.Iter = 10;
+    options.Tol = 1e-8;
+end
+[res dyn] = dpm(@bev_2,[],grd,prb,options);
