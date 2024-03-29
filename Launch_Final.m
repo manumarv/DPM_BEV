@@ -27,8 +27,6 @@ Optimal_Tractive_Force = optimal_wheel_torque/wr;
 
 Ft = m * acceleration_vector';
 
-% Fa = 0.5*rho_a*cd*speed_vector^2;
-
 speed_vector_optimized =  sqrt ((Optimal_Tractive_Force-Ft)/(0.5*rho_a*cd));
 
 
