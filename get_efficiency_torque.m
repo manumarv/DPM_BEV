@@ -1,3 +1,4 @@
+%% Dont need this for an EV - EV motors Torque is more direct
 function [Tm, efficiency, n] = get_efficiency_torque(speed_vector, acceleration_vector, gearnumber_vector, wm_list, Tm_list, efficiency_map,m,wr,cr,cd,g,rho_a,gear_ratios, Tmmax)
 
     % Calculate motor torque needed for a given speed and acceleration
