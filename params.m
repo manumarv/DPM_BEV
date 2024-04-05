@@ -23,9 +23,9 @@ wm_list     = [0   50  100  150  200  250  300  350  400  450  500  550  600];  
 
 Tm_list     = [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 150, 160];  % Motor torque list (Nm)
 
-gear_ratios = [3.5, 2.8, 2.0, 1.5, 1.0];
+%gear_ratios = [3.5, 2.8, 2.0, 1.5, 1.0];% Gear Ratios for Gas engine
 
-
+gear_ratios = [4.0, 1.5]; 
 % EFFICIENCY MAP
 efficiency_map = 0.01*[...
               50 50 50 50 50 50 50 50 50 50 50 50 50 50 50 50 50   
