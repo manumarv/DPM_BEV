@@ -1,10 +1,11 @@
 %% This is a gear ratio optimization, in this case electric motors might have between 2 or 3 gear ratio, specially trucks that require more torque 
 %% https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9399168/#bib4  - Main Source
 %% https://www.sciencedirect.com/science/article/abs/pii/S0888327014002210 - Read
+
 %This function optimizes the powertrain of a Battery electric vehicle based
 %on a torque optimization process. The Optimization process is a based on
 %a Dynamic Programming Algorithm. The main inputs of this test are speed,  
-% acceleration and gear number vectors, there are other secondary inputs which are the vehicle and motor 
+% acceleration, there are other secondary inputs which are the vehicle and motor 
 % parameters. The main output are the optimal torque sequence and the total minimized energy
 %consumption from this optimized speed profile. 
 
@@ -34,7 +35,7 @@ function [optimal_gear_sequence, min_energy] = minimize_energy_consumption(speed
                 energy_step = calculate_energy(speed_vector(i), acceleration_vector(i), gear_ratios(k));
                 
                 % Include gear change penalty if gear is changed
-                if k ~= j
+                if k ~= j % not equal to prev gear 
                     energy_step = energy_step + gear_change_penalty;
                 end
                 
