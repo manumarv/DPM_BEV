@@ -1,14 +1,21 @@
 
 clear,clc;
 % LOAD DRIVE CYCLE
-load ('JN1015.mat')
+%load ('JN1015.mat')
+
+drivecycleData = readtable('2006-03-21.csv');
+drivecycleData = table2array(drivecycleData(:,2:5));
+
+speed_vector = (drivecycleData(:,3:3)).';
+acceleration_vector = (drivecycleData(:,4:4)).';
+
 
 % LOAD VEHICLE PARAMETERS
 dt      = 1     ;   % Time step duration in seconds
-m       = 1000  ;   % Vehicle mass in kg
-wr      = 0.3   ;   % Wheel Radius in meters        
+m       = 1061  ;   % Vehicle mass in kg
+wr      = 0.32   ;   % Wheel Radius in meters        
 cr      = 0.012 ;   % 
-cd      = 0.7   ;   % cd*Af for a full-size vehicle
+cd      = 0.4   ;   % cd*Af for a full-size vehicle
 g       = 9.8   ;   % gravity                          
 rho_a   = 1.2   ;   %
  

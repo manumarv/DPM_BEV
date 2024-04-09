@@ -1,6 +1,6 @@
 %[optimal_torque, ~] = minimize_energy_consumption(speed_vector, acceleration_vector, gearnumber_vector, wm_list, Tm_list, efficiency_map, m,wr,cr,cd,g,rho_a,gear_ratios ,dt,Tmmax);
 
-[optimal_gear_sequence, min_energy] = minimize_energy_consumption(speed_vector, acceleration_vector, gearnumber_vector, m, wr, cr, cd, g, rho_a, gear_ratios, dt, Tmmax)
+[optimal_gear_sequence, min_energy] = minimize_energy_consumption(speed_vector, acceleration_vector, m, wr, cr, cd, g, rho_a, gear_ratios, dt, Tmmax)
 
 %Pt_Optimized        = n*optimal_torque;
 Pt_Optimized        = optimal_torque;

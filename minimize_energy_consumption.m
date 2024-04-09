@@ -9,7 +9,7 @@
 % parameters. The main output are the optimal torque sequence and the total minimized energy
 %consumption from this optimized speed profile. 
 
-function [optimal_gear_sequence, min_energy] = minimize_energy_consumption(speed_vector, acceleration_vector, gearnumber_vector, m, wr, cr, cd, g, rho_a, gear_ratios, dt, Tmmax)
+function [optimal_gear_sequence, min_energy] = minimize_energy_consumption(speed_vector, acceleration_vector, m, wr, cr, cd, g, rho_a, gear_ratios, dt, Tmmax)
     num_steps = length(speed_vector);
     num_gears = length(gear_ratios); % Assuming gear_ratios has the EV's 2 gear ratios
 
